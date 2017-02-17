@@ -2,7 +2,7 @@
 var http = require('http');
 
 //Lets define a port we want to listen to
-const PORT=8080;
+const PORT=80;
 var dispatcher = require('httpdispatcher');
 
 //Lets use our dispatcher
@@ -19,7 +19,7 @@ function handleRequest(request, response){
         console.log(err);
     }
 }
-dispatcher.onPost("/getFiles", function(req, res) {
+dispatcher.onGet("/getFiles", function(req, res) {
     var response = [
         {
             isDir: true,
